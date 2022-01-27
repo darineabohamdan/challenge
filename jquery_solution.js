@@ -60,3 +60,27 @@ $(".btn").click(function () {
 
     comparing_arrays(myPattern.length - 1);
 })
+
+// comparing the answer with the randomPattern
+
+function comparing_arrays(currentLevel) {
+
+    if (randomPattern[currentLevel] === myPattern[currentLevel]) {
+        if (myPattern.length === randomPattern.length) {
+            setTimeout(function () {
+                generatingRndSq();
+            }, 2000);
+        }
+    }
+    else {
+        var wrong = new Audio("sounds/wrong.mp3");
+        wrong.play();
+        $("body").addClass("game-over");
+        setTimeout(function () {
+            $("body").removeClass("game-over");
+        }, 100);
+        $("#title").text("Game Over, Press any key to Restart");
+        restart();
+    }
+
+}
