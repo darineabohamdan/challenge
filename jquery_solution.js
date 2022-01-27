@@ -14,3 +14,26 @@ function sound_color(color) {
     audio.play();
 }
 
+//  starting the game
+
+$(document).keypress(function () {
+    if (start = true) {
+        generatingRndSq();
+
+    }
+});
+
+function generatingRndSq() {
+    myPattern = [];
+
+    currentLevel++;
+
+    $("#title").text("Level " + currentLevel);
+
+    var random_number = Math.floor(Math.random() * 4);
+    var random_color = colors[random_number];
+    randomPattern.push(random_color);
+
+    $("#" + random_color).fadeOut(100).fadeIn(100);
+    sound_color(random_color);
+}
