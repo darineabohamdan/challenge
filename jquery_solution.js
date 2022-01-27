@@ -37,3 +37,15 @@ function generatingRndSq() {
     $("#" + random_color).fadeOut(100).fadeIn(100);
     sound_color(random_color);
 }
+
+//flashing  the box which the user press
+
+function flash_press(currentColor) {
+
+    $("#" + currentColor).addClass("pressed");
+
+    setTimeout(function () {
+        $("#" + currentColor).removeClass("pressed");
+    }, 100)
+}
+
