@@ -84,3 +84,12 @@ function comparing_arrays(currentLevel) {
     }
 
 }
+
+
+//restarting the game 
+function restart() {
+    currentLevel = 0;
+    randomPattern = [];
+
+    start = false;
+}
