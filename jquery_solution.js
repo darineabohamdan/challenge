@@ -49,3 +49,14 @@ function flash_press(currentColor) {
     }, 100)
 }
 
+//adding the last color to myPattern
+
+$(".btn").click(function () {
+    var my_color = $(this).attr("id");
+    myPattern.push(my_color);
+
+    sound_color(my_color);
+    flash_press(my_color);
+
+    comparing_arrays(myPattern.length - 1);
+})
