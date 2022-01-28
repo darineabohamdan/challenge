@@ -1,4 +1,4 @@
-myPattern = [];
+
 
 randomPattern = [];
 
@@ -9,8 +9,8 @@ var currentLevel = 0;
 var start = false;
 
 // sounds of each color  
-function sound_color(color) {
-    var audio = new Audio("sounds/" + color + ".mp3");
+function sound_color(random_color) {
+    var audio = new Audio("sounds/" + random_color + ".mp3");
     audio.play();
 }
 
@@ -30,8 +30,8 @@ function generatingRndSq() {
 
     $("#title").text("Level " + currentLevel);
 
-    var random_number = Math.floor(Math.random() * 4);
-    var random_color = colors[random_number];
+     random_number = Math.floor(Math.random() * 4);
+     random_color = colors[random_number];
     randomPattern.push(random_color);
 
     $("#" + random_color).fadeOut(100).fadeIn(100);

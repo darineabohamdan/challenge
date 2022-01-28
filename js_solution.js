@@ -1,6 +1,6 @@
 var colors = ["red", "blue", "green", "yellow"];
 var randomPattern = [];
-var myPattern = [];
+
 var start = false;
 var currentLevel = 0;
 var body = document.querySelector("body");
@@ -14,12 +14,15 @@ document.addEventListener("keypress", function () {
 });
 
 function generatingRndSq() {
+     myPattern = [];    
     currentLevel += 1;
     currentTitle.innerHTML = `currentLevel ${currentLevel}`;
     var random_number = Math.floor(Math.random() * 4);
     var random_color = colors[random_number];
 
     randomPattern.push(random_color);
+
+    //flashing  the box which the user press
 
 
     var animationBtn = document.querySelector("#" + random_color);
@@ -36,8 +39,8 @@ function generatingRndSq() {
 //adding the last color to myPattern
 
 var bTn = document.getElementsByClassName("btn");
-document.querySelectorAll(".btn").forEach((btn) => {
-    btn.onclick = () => {
+document.querySelectorAll(".btn").forEach(function(btn) {
+    btn.onclick = function()  {
         var my_color = btn.id;
         myPattern.push(my_color);
         color_sound(my_color);
@@ -49,16 +52,17 @@ document.querySelectorAll(".btn").forEach((btn) => {
 
 // comparing the answer with the randomPattern
 
-var comparing_arrays = (currentLevel) => {
+var comparing_arrays = function(currentLevel) {
     if (randomPattern[currentLevel] === myPattern[currentLevel]) {
         if (myPattern.length === randomPattern.length) {
-            setTimeout(() => {
+            setTimeout(function()  {
                 generatingRndSq();
-            }, 1000);
+            }, 2000);
         }
+
     } else {
         body.classList.add("game-over");
-        setTimeout(() => {
+        setTimeout(function()   {
             body.classList.remove("game-over");
         }, 200);
         gameOverAudio();
@@ -71,7 +75,7 @@ var comparing_arrays = (currentLevel) => {
 
 //restarting the game 
 
-var restart = () => {
+var restart = function()  {
     currentLevel = 0;
     randomPattern = [];
     start = false;
@@ -80,7 +84,7 @@ var restart = () => {
 
 // sounds and audio
 
-var color_sound = (name) => {
+var color_sound = function(name)  {
     var audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
 };
@@ -93,10 +97,10 @@ function gameOverAudio() {
 
 //flashing  the box which the user press
 
-var flash_press = (currentColor) => {
+var flash_press = function(currentColor)  {
     var buttons = document.querySelector(`#${currentColor}`);
     buttons.classList.add("pressed");
-    setTimeout(() => {
+    setTimeout(function() {
         buttons.classList.remove("pressed");
     }, 100);
 };
