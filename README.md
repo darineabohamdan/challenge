@@ -1,4 +1,4 @@
-### Hello, and welcome to this challenge. 
+# Hello, and welcome to this challenge. 
 
 
 ## This is how this game works: 
