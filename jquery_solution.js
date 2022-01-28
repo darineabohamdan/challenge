@@ -1,6 +1,6 @@
 
 randomPattern = [];
-var colors = ["red", "blue", "green", "yellow"];
+var colors = ["green", "red", "yellow" , "blue"];
 var currentLevel = 0;
 
 

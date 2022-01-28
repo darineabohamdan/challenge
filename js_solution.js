@@ -1,23 +1,18 @@
 
 
-var colors = ["red", "blue", "green", "yellow"];
+var colors = ["green" , "red" , "yellow", "blue"];
 var randomPattern = [];
 var currentLevel = 0;
 var body = document.querySelector("body");
 var currentTitle = document.getElementById("title");
 
-// sounds and audio
+
+// sounds of each color
 
 var color_sound = function(name)  {
     var audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
 };
-
-function gameOverAudio() {
-    var gameOver = new Audio("sounds/wrong.mp3");
-    gameOver.play();
-}
-
 
 //  starting the game
 
@@ -94,6 +89,11 @@ var comparing_arrays = function(currentLevel) {
         restart();
     }
 };
+
+function gameOverAudio() {
+    var gameOver = new Audio("sounds/wrong.mp3");
+    gameOver.play();
+}
 
 
 //restarting the game 
