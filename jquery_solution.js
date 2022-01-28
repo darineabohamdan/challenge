@@ -17,10 +17,10 @@ function sound_color(random_color) {
 //  starting the game
 
 $(document).keypress(function () {
-    if (start = true) {
+    
         generatingRndSq();
 
-    }
+    
 });
 
 function generatingRndSq() {
