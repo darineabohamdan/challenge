@@ -8,7 +8,7 @@ var currentTitle = document.getElementById("title");
 
 //  starting the game
 document.addEventListener("keypress", function () {
-    if (!start) {
+    if (start == true) {
         generatingRndSq();
     }
 });
@@ -38,10 +38,10 @@ function generatingRndSq() {
 
 //adding the last color to myPattern
 
-var bTn = document.getElementsByClassName("btn");
-document.querySelectorAll(".btn").forEach(function(btn) {
-    btn.onclick = function()  {
-        var my_color = btn.id;
+var butn = document.getElementsByClassName("btn");
+document.querySelectorAll(".btn").forEach(function(butn) {
+    butn.onclick = function()  {
+        var my_color = butn.id;
         myPattern.push(my_color);
         color_sound(my_color);
         flash_press(my_color);
@@ -67,7 +67,6 @@ var comparing_arrays = function(currentLevel) {
         }, 200);
         gameOverAudio();
         currentTitle.innerHTML = `Game Over, Press Any Key to Restart`;
-        currentTitle.style.fontSize = "2rem";
         restart();
     }
 };
