@@ -1,18 +1,19 @@
 
 
-var colors = ["green" , "red" , "yellow", "blue"];
+var colors = ["red", "blue", "green", "yellow"];
 var randomPattern = [];
+var start = false;
 var currentLevel = 0;
 var body = document.querySelector("body");
 var currentTitle = document.getElementById("title");
 
-
 // sounds of each color
 
-var color_sound = function(name)  {
+var sound_color = function(name)  {
     var audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
 };
+
 
 //  starting the game
 
@@ -32,15 +33,7 @@ function generatingRndSq() {
 
     randomPattern.push(random_color);
 
-  //flashing  the box which the user press
-
-var flash_press = function(currentColor)  {
-    var buttons = document.querySelector(`#${currentColor}`);
-    buttons.classList.add("pressed");
-    setTimeout(function() {
-        buttons.classList.remove("pressed");
-    }, 100);
-};
+    //flashing  the box of the generated color and the box that the user press
 
 
     var flash_press = document.querySelector("#" + random_color);
@@ -50,9 +43,17 @@ var flash_press = function(currentColor)  {
     setTimeout(function() {
         flash_press.classList.remove("pressed");
     }, 50);
-    color_sound(random_color);
+    sound_color(random_color);
 
 }
+
+var flash_press = function(currentColor)  {
+    var buttons = document.querySelector(`#${currentColor}`);
+    buttons.classList.add("pressed");
+    setTimeout(function() {
+        buttons.classList.remove("pressed");
+    }, 100);
+};
 
 //adding the last color to myPattern
 
@@ -61,7 +62,7 @@ document.querySelectorAll(".btn").forEach(function(butn) {
     butn.onclick = function()  {
         var my_color = butn.id;
         myPattern.push(my_color);
-        color_sound(my_color);
+        sound_color(my_color);
         flash_press(my_color);
         comparing_arrays(myPattern.length - 1);
     };
