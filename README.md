@@ -15,6 +15,7 @@
 
 # Languages used:
 
-This game is coded in two solutions, a jQuery solution, and a javaScript solution.
-When you open the game, it will take you through the Jquery solution, while the link to javaScript solution is commented in the index.html.
-To try the javaScript solution, all you have to do is to comment the link of jQuery solution in index.html, and remove the comment of the link of JavaScript solution in index.html. Then just refresh the game.
+- This game uses HTML, CSS, and javaScript.
+- This game is coded in two solutions, a jQuery solution, and a javaScript solution.
+- When you open the game, it will take you through the Jquery solution, while the link to javaScript solution is commented in the index.html.
+- To try the javaScript solution, all you have to do is to comment the link of jQuery solution in index.html, and remove the comment of the link of JavaScript solution in index.html. Then just refresh the game.
