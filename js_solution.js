@@ -1,12 +1,28 @@
+
+
 var colors = ["red", "blue", "green", "yellow"];
 var randomPattern = [];
-
 var start = false;
 var currentLevel = 0;
 var body = document.querySelector("body");
 var currentTitle = document.getElementById("title");
 
+// sounds and audio
+
+var color_sound = function(name)  {
+    var audio = new Audio("sounds/" + name + ".mp3");
+    audio.play();
+};
+
+function gameOverAudio() {
+    var gameOver = new Audio("sounds/wrong.mp3");
+    gameOver.play();
+}
+
+
 //  starting the game
+
+
 document.addEventListener("keypress", function () {
     
         generatingRndSq();
@@ -22,7 +38,15 @@ function generatingRndSq() {
 
     randomPattern.push(random_color);
 
-    //flashing  the box which the user press
+  //flashing  the box which the user press
+
+var flash_press = function(currentColor)  {
+    var buttons = document.querySelector(`#${currentColor}`);
+    buttons.classList.add("pressed");
+    setTimeout(function() {
+        buttons.classList.remove("pressed");
+    }, 100);
+};
 
 
     var flash_press = document.querySelector("#" + random_color);
@@ -52,6 +76,7 @@ document.querySelectorAll(".btn").forEach(function(butn) {
 
 // comparing the answer with the randomPattern
 
+
 var comparing_arrays = function(currentLevel) {
     if (randomPattern[currentLevel] == myPattern[currentLevel]) {
         if (myPattern.length == randomPattern.length) {
@@ -77,29 +102,5 @@ var comparing_arrays = function(currentLevel) {
 var restart = function()  {
     currentLevel = 0;
     randomPattern = [];
-    start = false;
-};
 
-
-// sounds and audio
-
-var color_sound = function(name)  {
-    var audio = new Audio("sounds/" + name + ".mp3");
-    audio.play();
-};
-
-function gameOverAudio() {
-    var gameOver = new Audio("sounds/wrong.mp3");
-    gameOver.play();
-}
-
-
-//flashing  the box which the user press
-
-var flash_press = function(currentColor)  {
-    var buttons = document.querySelector(`#${currentColor}`);
-    buttons.classList.add("pressed");
-    setTimeout(function() {
-        buttons.classList.remove("pressed");
-    }, 100);
 };
