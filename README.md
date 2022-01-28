@@ -9,4 +9,6 @@
 
 ## Here are some screen shots of the game:
 
-<img src="/ScreenShots/Screenshot1.png">
+<img src="ScreenShots/Screenshot1.png">
+<img src="/ScreenShots/Screenshot2.png">
+<img src="/ScreenShots/Screenshot3.png">
