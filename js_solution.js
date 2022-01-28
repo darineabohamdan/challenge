@@ -8,15 +8,15 @@ var currentTitle = document.getElementById("title");
 
 //  starting the game
 document.addEventListener("keypress", function () {
-    if (start == true) {
+    
         generatingRndSq();
-    }
+    
 });
 
 function generatingRndSq() {
      myPattern = [];    
     currentLevel += 1;
-    currentTitle.innerHTML = `currentLevel ${currentLevel}`;
+    currentTitle.innerHTML = `Level ${currentLevel}`;
     var random_number = Math.floor(Math.random() * 4);
     var random_color = colors[random_number];
 
@@ -25,12 +25,12 @@ function generatingRndSq() {
     //flashing  the box which the user press
 
 
-    var animationBtn = document.querySelector("#" + random_color);
+    var flash_press = document.querySelector("#" + random_color);
 
 
-    animationBtn.classList.add("pressed");
-    setTimeout(() => {
-        animationBtn.classList.remove("pressed");
+    flash_press.classList.add("pressed");
+    setTimeout(function() {
+        flash_press.classList.remove("pressed");
     }, 50);
     color_sound(random_color);
 
@@ -53,8 +53,8 @@ document.querySelectorAll(".btn").forEach(function(butn) {
 // comparing the answer with the randomPattern
 
 var comparing_arrays = function(currentLevel) {
-    if (randomPattern[currentLevel] === myPattern[currentLevel]) {
-        if (myPattern.length === randomPattern.length) {
+    if (randomPattern[currentLevel] == myPattern[currentLevel]) {
+        if (myPattern.length == randomPattern.length) {
             setTimeout(function()  {
                 generatingRndSq();
             }, 2000);
