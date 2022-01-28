@@ -2,7 +2,6 @@
 
 var colors = ["red", "blue", "green", "yellow"];
 var randomPattern = [];
-var start = false;
 var currentLevel = 0;
 var body = document.querySelector("body");
 var currentTitle = document.getElementById("title");
