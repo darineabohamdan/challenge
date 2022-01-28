@@ -9,9 +9,9 @@
 
 ## Here are some screen shots of the game:
 
-<img width="22px" src="ScreenShots/Screenshot1.png">
-<img width="22px" src="ScreenShots/Screenshot2.png">
-<img width="22px" src="ScreenShots/Screenshot3.png">
+<img width="200px" src="ScreenShots/Screenshot1.png">
+<img width="200px" src="ScreenShots/Screenshot2.png">
+<img width="200px" src="ScreenShots/Screenshot3.png">
 
 # Languages used:
 
